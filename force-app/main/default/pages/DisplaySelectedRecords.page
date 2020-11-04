@@ -1,0 +1,18 @@
+<apex:page standardController="Account" recordSetVar="accountList">
+    <apex:pageBlock>
+        <!-->
+        <apex:pageBlockTable value="{!selected}" var="actObj">
+            <apex:column headerValue="Name" value="{!actObj.Name}"/>
+            <apex:column headerValue="Industry" value="{!actObj.Industry}"/>
+        </apex:pageBlockTable>
+        -->
+
+        <apex:pageBlockTable value="{!selected}" var="actObj">
+            <apex:repeat value="{!$ObjectType.Account.FieldSets.AccountRecordsFieldSet}" var="field">
+                <apex:column headerValue="{!field.label}" value="{!actObj[field]}" />
+            </apex:repeat>
+        </apex:pageBlockTable>
+
+    </apex:pageBlock>
+
+</apex:page>

@@ -1,0 +1,11 @@
+<apex:page controller="AccountSaveController">
+    <apex:form>
+        <apex:pageBlock title="Account Information">
+            <apex:pageBlockSection>
+                <apex:repeat value="{!acctFields}" var="field">
+                    <apex:inputField value="{!acct[field]}"/>
+                </apex:repeat>   
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
